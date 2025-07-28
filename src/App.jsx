@@ -38,7 +38,6 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Products />} />
-            <Route path="/products" element={<Products />} />
             <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </main>
