@@ -1,15 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { useDropdown } from "../hooks/useDropdown";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const {
-    isOpen: isUserMenuOpen,
-    toggle: toggleUserMenu,
-    dropdownRef: userMenuRef,
-  } = useDropdown();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -86,11 +80,8 @@ export default function Navbar() {
             </button>
 
             {/* User Menu */}
-            <div className="relative" ref={userMenuRef}>
-              <button
-                onClick={toggleUserMenu}
-                className="flex items-center text-gray-600 transition-colors duration-200 hover:text-green-700"
-              >
+            <div className="relative">
+              <button className="flex items-center text-gray-600 transition-colors duration-200 hover:text-green-700">
                 <svg
                   className="w-6 h-6"
                   fill="none"
@@ -105,36 +96,6 @@ export default function Navbar() {
                   />
                 </svg>
               </button>
-
-              {isUserMenuOpen && (
-                <div className="absolute right-0 w-48 py-1 mt-2 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
-                  <a
-                    href="/profile"
-                    className="block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100"
-                  >
-                    Your Profile
-                  </a>
-                  <a
-                    href="/orders"
-                    className="block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100"
-                  >
-                    Your Orders
-                  </a>
-                  <a
-                    href="/wishlist"
-                    className="block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100"
-                  >
-                    Wishlist
-                  </a>
-                  <hr className="my-1" />
-                  <a
-                    href="/login"
-                    className="block px-4 py-2 text-sm text-gray-700 transition-colors duration-200 hover:bg-gray-100"
-                  >
-                    Sign in
-                  </a>
-                </div>
-              )}
             </div>
           </div>
 
@@ -142,7 +103,7 @@ export default function Navbar() {
           <div className="md:hidden">
             <button
               onClick={toggleMobileMenu}
-              className="text-gray-600 transition-colors duration-200 hover:text-blue-600 focus:outline-none focus:text-blue-600"
+              className="text-gray-600 transition-colors duration-200 hover:text-green-600 focus:outline-none focus:text-green-600"
             >
               <svg
                 className="w-6 h-6"
@@ -178,14 +139,14 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block px-3 py-2 text-base font-medium text-gray-700 transition-colors duration-200 rounded-md hover:text-blue-600"
+                  className="block px-3 py-2 text-base font-medium text-gray-700 transition-colors duration-200 rounded-md hover:text-green-600"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="pt-4 pb-3 border-t border-gray-200">
                 <div className="flex items-center px-3 space-x-3">
-                  <button className="text-gray-600 transition-colors duration-200 hover:text-blue-600">
+                  <button className="text-gray-600 transition-colors duration-200 hover:text-green-600">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -200,7 +161,7 @@ export default function Navbar() {
                       />
                     </svg>
                   </button>
-                  <button className="relative text-gray-600 transition-colors duration-200 hover:text-blue-600">
+                  <button className="relative text-gray-600 transition-colors duration-200 hover:text-green-600">
                     <svg
                       className="w-6 h-6"
                       fill="none"
@@ -214,11 +175,11 @@ export default function Navbar() {
                         d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.8 5.2a1 1 0 00.9 1.3h9.8M7 13v6a2 2 0 002 2h6a2 2 0 002-2v-6"
                       />
                     </svg>
-                    <span className="absolute flex items-center justify-center w-5 h-5 text-xs text-white bg-red-500 rounded-full -top-2 -right-2">
+                    {/* <span className="absolute flex items-center justify-center w-5 h-5 text-xs text-white bg-red-500 rounded-full -top-2 -right-2">
                       3
-                    </span>
+                    </span> */}
                   </button>
-                  <button className="text-gray-600 transition-colors duration-200 hover:text-blue-600">
+                  <button className="text-gray-600 transition-colors duration-200 hover:text-green-600">
                     <svg
                       className="w-6 h-6"
                       fill="none"

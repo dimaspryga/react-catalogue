@@ -41,7 +41,7 @@ export default function SearchInput({
       <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
         <svg
           className={`h-5 w-5 transition-colors duration-200 ${
-            isFocused ? "text-blue-500" : "text-gray-400"
+            isFocused ? "text-green-500" : "text-gray-400"
           }`}
           fill="none"
           stroke="currentColor"
@@ -65,9 +65,9 @@ export default function SearchInput({
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
         onKeyDown={handleKeyDown}
-        className={`block w-full pl-10 pr-12 py-3 border rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 ${
+        className={`block w-full pl-10 pr-12 py-3 border rounded-lg leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-all duration-200 ${
           isFocused
-            ? "border-blue-500 shadow-lg"
+            ? "border-green-500 shadow-lg"
             : "border-gray-300 hover:border-gray-400"
         }`}
         placeholder={placeholder}
@@ -111,10 +111,10 @@ export default function SearchInput({
         )}
       </div>
 
-      {/* Loading indicator (optional) */}
+      {/* Loading indicator*/}
       {value && (
         <div className="absolute inset-y-0 flex items-center pr-3 right-8">
-          <div className="w-4 h-4 border-b-2 border-blue-500 rounded-full opacity-0 animate-spin"></div>
+          <div className="w-4 h-4 border-b-2 border-green-500 rounded-full opacity-0 animate-spin"></div>
         </div>
       )}
     </div>

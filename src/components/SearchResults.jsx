@@ -14,11 +14,11 @@ export default function SearchResults({
   const safeTotalCount = typeof totalCount === "number" ? totalCount : 0;
 
   return (
-    <div className="p-4 mb-6 border border-blue-200 rounded-lg bg-blue-50">
+    <div className="p-4 mb-6 border border-green-200 rounded-lg bg-green-50">
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <svg
-            className="w-5 h-5 text-blue-600"
+            className="w-5 h-5 text-green-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -31,7 +31,7 @@ export default function SearchResults({
             />
           </svg>
           <div>
-            <p className="font-medium text-blue-800">
+            <p className="font-medium text-green-800">
               {safeResultsCount > 0 ? (
                 <>
                   Found <span className="font-bold">{safeResultsCount}</span>{" "}
@@ -46,7 +46,7 @@ export default function SearchResults({
               )}
             </p>
             {safeResultsCount > 0 && safeTotalCount > 0 && (
-              <p className="text-sm text-blue-600">
+              <p className="text-sm text-green-600">
                 Showing results from {safeTotalCount} total products
               </p>
             )}
@@ -54,7 +54,7 @@ export default function SearchResults({
         </div>
         <button
           onClick={onClearSearch}
-          className="flex items-center space-x-1 text-sm font-medium text-blue-600 transition-colors duration-200 hover:text-blue-800"
+          className="flex items-center space-x-1 text-sm font-medium text-green-600 transition-colors duration-200 hover:text-green-800"
         >
           <span>Clear</span>
           <svg
@@ -74,9 +74,9 @@ export default function SearchResults({
       </div>
 
       {safeResultsCount === 0 && (
-        <div className="pt-3 mt-3 border-t border-blue-200">
-          <p className="mb-2 text-sm text-blue-700">Try these suggestions:</p>
-          <ul className="space-y-1 text-sm text-blue-600">
+        <div className="pt-3 mt-3 border-t border-green-200">
+          <p className="mb-2 text-sm text-green-700">Try these suggestions:</p>
+          <ul className="space-y-1 text-sm text-green-600">
             <li>• Check your spelling</li>
             <li>• Use more general keywords</li>
             <li>• Try different product categories</li>

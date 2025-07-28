@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "./pages/Products";
+import ProductDetail from "./pages/ProductDetail";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -37,6 +38,8 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<Products />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
           </Routes>
         </main>
         <Footer />

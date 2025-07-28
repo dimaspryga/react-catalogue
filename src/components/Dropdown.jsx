@@ -23,7 +23,7 @@ export default function Dropdown({
       <button
         type="button"
         onClick={toggle}
-        className="relative w-full px-4 py-3 text-left transition-all duration-200 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 hover:border-gray-400"
+        className="relative justify-between w-full px-8 py-3 text-left transition-all duration-200 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 hover:border-gray-400"
         aria-haspopup="listbox"
         aria-expanded={isOpen}
       >
@@ -57,7 +57,7 @@ export default function Dropdown({
               onClick={() => handleOptionClick(option.value)}
               className={`w-full text-left px-4 py-2 hover:bg-gray-100 transition-colors duration-150 ${
                 value === option.value
-                  ? "bg-blue-50 text-blue-600"
+                  ? "bg-green-50 text-green-600"
                   : "text-gray-900"
               }`}
               role="option"

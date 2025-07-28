@@ -1,42 +1,44 @@
 export default function SkeletonCard() {
   return (
-    <div className="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl animate-pulse">
-      {/* Image Skeleton */}
-      <div className="h-48 bg-gray-200"></div>
+    <div className="relative overflow-hidden bg-white shadow-sm rounded-2xl animate-pulse h-80">
+      {/* Background Image Skeleton - Fills entire card */}
+      <div className="absolute inset-0 bg-gray-200"></div>
 
-      {/* Content Skeleton */}
-      <div className="p-4">
-        {/* Category & Brand */}
-        <div className="flex items-center justify-between mb-2">
-          <div className="w-16 h-3 bg-gray-200 rounded"></div>
-          <div className="w-12 h-3 bg-gray-200 rounded"></div>
-        </div>
+      {/* Top Badges Skeleton */}
+      <div className="absolute z-10 flex items-start justify-between top-3 left-3 right-3">
+        <div className="w-20 h-6 bg-gray-300 rounded-full"></div>
+        <div className="w-8 h-8 bg-gray-300 rounded-full"></div>
+      </div>
 
-        {/* Title */}
-        <div className="h-5 mb-2 bg-gray-200 rounded"></div>
-        <div className="w-3/4 h-5 mb-3 bg-gray-200 rounded"></div>
+      {/* Content Panel Skeleton - Fixed at bottom of original card */}
+      <div className="absolute left-0 right-0 z-10" style={{ bottom: "0px" }}>
+        <div className="px-4 pb-4">
+          <div className="overflow-hidden shadow-lg bg-white/95 backdrop-blur-sm rounded-xl">
+            <div className="p-4">
+              {/* Title Skeleton */}
+              <div className="h-5 mb-2 bg-gray-200 rounded"></div>
+              <div className="w-3/4 h-5 mb-3 bg-gray-200 rounded"></div>
 
-        {/* Description */}
-        <div className="h-4 mb-1 bg-gray-200 rounded"></div>
-        <div className="w-5/6 h-4 mb-3 bg-gray-200 rounded"></div>
+              {/* Rating Skeleton */}
+              <div className="flex items-center mb-3">
+                <div className="flex space-x-1">
+                  {Array.from({ length: 5 }).map((_, index) => (
+                    <div
+                      key={index}
+                      className="w-4 h-4 bg-gray-200 rounded"
+                    ></div>
+                  ))}
+                </div>
+                <div className="w-16 h-4 ml-2 bg-gray-200 rounded"></div>
+              </div>
 
-        {/* Rating */}
-        <div className="flex items-center mb-3">
-          <div className="flex space-x-1">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div key={index} className="w-4 h-4 bg-gray-200 rounded"></div>
-            ))}
+              {/* Price Skeleton */}
+              <div className="flex items-center space-x-2">
+                <div className="w-16 h-6 bg-gray-200 rounded"></div>
+                <div className="w-12 h-4 bg-gray-200 rounded"></div>
+              </div>
+            </div>
           </div>
-          <div className="w-8 h-4 ml-2 bg-gray-200 rounded"></div>
-        </div>
-
-        {/* Price & Button */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-16 h-6 bg-gray-200 rounded"></div>
-            <div className="w-12 h-4 bg-gray-200 rounded"></div>
-          </div>
-          <div className="w-20 h-8 bg-gray-200 rounded"></div>
         </div>
       </div>
     </div>
